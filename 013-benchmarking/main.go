@@ -5,6 +5,8 @@ func main() {
 	makeWay()
 }
 
+var cowboy int
+
 func compLit() {
 	ii := []int{}
 	// l := len(ii)
