@@ -10,6 +10,6 @@ func main() {
 }
 
 func addNums(x, y int) int {
-	r := x * y
+	r := x + y
 	return r
 }

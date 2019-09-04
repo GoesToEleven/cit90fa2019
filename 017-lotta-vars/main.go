@@ -2,21 +2,21 @@ package main
 
 import "fmt"
 
-var z = "happy"
+var y = "happy"
 
 func main() {
-	fmt.Println(z)
+	fmt.Println(y)
 
-	z = "So super happy"
+	y = "So super happy"
 
+	bar(y)
 	foo()
-	bar(z)
 
-	fmt.Println("Program about to end!")
+	// fmt.Println("Program about to end!")
 }
 
 func foo() {
-	fmt.Println(z)
+	fmt.Println(y)
 }
 
 func bar(x string) {
