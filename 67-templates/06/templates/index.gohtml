@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOME</title>
+</head>
+
+<body>
+    {{range $i, $v := .}}
+    <!-- xs -->
+    <h1>HOME - {{$i}} - {{$v}}</h1> <!-- s -->
+    {{end}}
+    go to <a href="/about">ABOUT</a>
+</body>
+
+</html>
