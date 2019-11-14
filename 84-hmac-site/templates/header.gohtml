@@ -1,0 +1,19 @@
+{{define "header"}}
+<header>
+    <div><i class="fa fa-coffee"></i></div>
+    <div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            {{if .LoggedIn}}
+            <li>{{.First}}</li>
+            <li><a href="/logout">Logout</a></li>
+            {{else}}
+            <li><a href="/signup">Signup</a></li>
+            <li><a href="/login">Login</a></li>
+            {{end}}
+        </ul>
+    </div>
+</header>
+{{end}}

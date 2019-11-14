@@ -1,0 +1,12 @@
+{{template "topofpage" .}}
+{{template "header" .}}
+<div id="atf">
+    <h1>{{.Heading}}</h1>
+    <form action="/signupprocess" method="POST">
+        <input type="text" name="fn" placeholder="FIRST NAME">
+        <input type="text" name="em" placeholder="EMAIL">
+        <input type="password" name="pw" placeholder="PASSWORD">
+        <input type="submit">    
+    </form>
+</div>
+{{template "bottomofpage"}}
