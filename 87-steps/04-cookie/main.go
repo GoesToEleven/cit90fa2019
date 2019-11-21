@@ -7,6 +7,10 @@ import (
 
 var tpl *template.Template
 
+type pageData struct {
+	Value string
+}
+
 func init() {
 	tpl = template.Must(template.ParseGlob("templates/*.gohtml"))
 }
@@ -20,11 +24,29 @@ func main() {
 
 func foo(w http.ResponseWriter, r *http.Request) {
 	// set cookie
+	c := &http.Cookie{
+		Name: "my-cook",
+		Value: "some value here",
+		Path: "/",
+	}
+	http.SetCookie(w, c)
+
 	tpl.ExecuteTemplate(w, "index.gohtml", nil)
 }
 
 func bar(w http.ResponseWriter, r *http.Request) {
 	// retrieve cookie
+	c, err := r.Cookie("my-cook")
+	if err != nil {
+		http.Error(w, "couldn't get my-cook cookie", http.StatusBadRequest)
+		return
+	}
+
+	pd := pageData{
+		Value: c.Value,
+	}
+	
+
 	// output cookie values
-	tpl.ExecuteTemplate(w, "index.gohtml", nil)
+	tpl.ExecuteTemplate(w, "bar.gohtml", pd)
 }
