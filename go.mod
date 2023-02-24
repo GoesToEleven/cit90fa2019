@@ -4,7 +4,6 @@ go 1.12
 
 require (
 	github.com/aws/aws-lambda-go v1.13.2
-	github.com/golang/mock v1.3.1
 	github.com/lib/pq v1.2.0
-	golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
+	golang.org/x/crypto v0.1.0
 )
